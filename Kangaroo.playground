@@ -1,0 +1,54 @@
+// Aki Saito
+// HackerRank - Easy
+// Kangaroo
+// July 16, 2018
+// Language: Swift 4
+// 
+/* Description:
+    You are choreographing a circus show with various animals. For one act, you are given two kangaroos on a number line ready to jump in the positive direction (i.e, toward positive infinity).
+
+    The first kangaroo starts at location x1 and moves at a rate of v1 meters per jump.
+    The second kangaroo starts at location x2 and moves at a rate of v2 meters per jump.
+    You have to figure out a way to get both kangaroos at the same location as part of the show.
+
+    Complete the function kangaroo which takes starting location and speed of both kangaroos as input, and return YES or NO appropriately. Can you determine if the kangaroos will ever land at the same location at the same time? The two kangaroos must land at the same location after making the same number of jumps.
+*/
+
+
+import UIKit
+
+let x1 = 0
+let v1 = 3
+let x2 = 4
+let v2 = 2
+
+
+// Complete the kangaroo function below.
+func kangaroo(x1: Int, v1: Int, x2: Int, v2: Int) -> String {
+    var result = ""
+    
+    // Rename for easier read
+    let firstKangaroo = x1
+    let secondKangaroo = x2
+    let firstSpd = v1
+    let secondSpd = v2
+    
+    var kangaOnePos = firstKangaroo
+    var kangaTwoPos = secondKangaroo
+    
+    for jumps in 1...10000 {
+        kangaOnePos = kangaOnePos + firstSpd
+        kangaTwoPos = kangaTwoPos + secondSpd
+        if kangaOnePos == kangaTwoPos {
+            result = "YES"
+            break
+        } else {
+            result = "NO"
+        }
+    }
+    
+    return result
+}
+
+let ans:String = kangaroo(x1: x1, v1: v1, x2: x2, v2: v2)
+print(ans)
