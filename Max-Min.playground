@@ -1,0 +1,48 @@
+// Aki Saito
+// HackerRank - Easy
+// Finding Max and Min of Array with 5 Integers
+// July 16, 2018
+// Language: Swift 4
+
+import UIKit
+
+let arr = [396285104, 573261094, 759641832, 819230764, 364801279]
+
+// Helper function - summing without one
+func summingWithoutOne(pos: Int) -> Int {
+    var total: Int = 0
+    for x in 0...arr.count-1{
+        if x == pos {
+            
+        } else {
+            total = total + arr[x]
+        }
+    }
+    return total
+}
+
+func miniMaxSum(arr: [Int]) -> Void {
+    let numberOfIntegers = arr.count
+    var sumMax = 0
+    var sumMin = 0
+    var sum: Int = 0
+    // get dummy sumMin
+    for x in 0...numberOfIntegers-1 {
+        sumMin = sumMin + arr[x]
+        
+    }
+    for x in 0...numberOfIntegers-1 {
+        sum = summingWithoutOne(pos: x)
+        
+        if sumMax < sum {
+            sumMax = sum
+        }
+        if sumMin > sum {
+            sumMin = sum
+        }
+    }
+    print("Minimum Sum: \(sumMin)", "Maximum Sum: \(sumMax)")
+
+}
+
+miniMaxSum(arr: arr)
