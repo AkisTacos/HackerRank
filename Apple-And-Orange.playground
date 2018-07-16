@@ -1,0 +1,73 @@
+// Aki Saito
+// HackerRank - Easy
+// Apple and Oranges
+// July 16, 2018
+// Language: Swift 4
+// 
+/* Description:
+   Sam's house has an apple tree and an orange tree that yield an abundance of fruit. In the diagram below, the red region denotes his house, where s is the start point, and t is the endpoint. The apple tree is to the left of his house, and the orange tree is to its right. You can assume the trees are located on a single point, where the apple tree is at point a, and the orange tree is at point b.
+
+    When a fruit falls from its tree, it lands d units of distance from its tree of origin along the x-axis. A negative value of means the fruit fell d units to the tree's left, and a positive value of d means it falls d units to the tree's right.
+    Complete the function countApplesAndOranges,
+    where,
+
+    s, Starting point of Sam's house location. 
+    t, Ending location of Sam's house location. 
+    a, Location of the Apple tree. 
+    b, Location of the Orange tree. 
+    m, Number of apples that fell from the tree. 
+    apples, Distance at which each apple falls from the tree. 
+    n, Number of oranges that fell from the tree. 
+    oranges, Distance at which each orange falls from the tree.
+
+    Given the value of  for  apples and  oranges, can you determine how many apples and oranges will fall on Sam's house (i.e., in the inclusive range )? Print the number of apples that fall on Sam's house as your first line of output, then print the number of oranges that fall on Sam's house as your second line of output.
+*/
+
+import UIKit
+
+let s = 7
+let t = 11
+let a = 5
+let b = 15
+let apples = [-2, 2, 1]
+let oranges = [5, -6]
+
+
+// Complete the countApplesAndOranges function below.
+func countApplesAndOranges(s: Int, t: Int, a: Int, b: Int, apples: [Int], oranges: [Int]) -> Void {
+    
+    // s: the START point of Sam's house
+    // t: the END point of Sam's house
+    // a: location of APPLE tree
+    // b: location of ORANGE tree
+    // apples: contains distance at which each apple fell from tree
+    // oranges: contains distance at which each orange fell from tree
+    
+    let appleTreeLocation: Int = a
+    let orangeTreeLocation: Int = b
+    
+    var samsApples: Int = 0
+    var samsOranges: Int = 0
+    
+    // Find the number of apples fell on Sam's property
+    for apple in apples {
+        // Calculate the location of each apple's fall position
+        let fallPointAppl = appleTreeLocation + apple
+        if (s <= fallPointAppl) && (fallPointAppl <= t) {
+            samsApples = samsApples + 1
+        }
+    }
+    // Find the number of ornages fell on Sam's property
+    for orange in oranges {
+        // Calc the location of each orange's fall
+        let fallPointOran = orangeTreeLocation + orange
+        if (s <= fallPointOran) && (fallPointOran <= t) {
+            samsOranges = samsOranges + 1
+        }
+    }
+    print(samsApples)
+    print(samsOranges)
+    
+}
+
+countApplesAndOranges(s: s, t: t, a: a, b: b, apples: apples, oranges: oranges)
