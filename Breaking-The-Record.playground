@@ -1,0 +1,58 @@
+// Aki Saito
+// HackerRank - Easy
+// Breaking the Records
+// July 17, 2018
+// Language: Swift 4
+// 
+/* Description:
+    Maria plays college basketball and wants to go pro. Each season she maintains a record of her play. She tabulates the number of times she breaks her season record for most points and least points in a game. Points scored in the first game establish her record for the season, and she begins counting from there.
+    
+    For example, assume her scores for the season are represented in the array score = [12, 24, 10, 24]. Scores are in the same order as the games played. She would tabulate her results as follows:
+
+        Count
+    Game  Score  Minimum  Maximum   Min Max
+     0      12     12       12       0   0
+     1      24     12       24       0   1
+     2      10     10       24       1   1
+     3      24     10       24       1   1
+
+    Given Maria's array of scores for a season of n games, find and print the number of times she breaks her records for most and least points scored during the season.
+
+*/
+
+import UIKit
+
+let scores = [3, 4, 21, 36, 10, 28, 35, 5, 24, 42]
+
+
+// Complete the breakingRecords function below.
+func breakingRecords(scores: [Int]) -> [Int] {
+    
+    // Keep track of max, min, count array for each as well
+    var max: Int = scores[0]
+    var min: Int = scores[0]
+    var counterMax: Int = 0
+    var counterMin: Int = 0
+    
+    for score in scores {
+        // Check if score is lower than current min
+        if score < min {
+            // if so then set new min and increment counter
+            min = score
+            counterMin += 1
+        }
+        // Check if score is higher than current max
+        else if score > max {
+            // if so then set new max and increment counter
+            max = score
+            counterMax += 1
+        }
+    }
+    
+    let counter = [counterMax, counterMin]
+    
+    return counter
+    
+}
+
+print(breakingRecords(scores: scores))
