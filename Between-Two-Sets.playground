@@ -1,0 +1,63 @@
+// Aki Saito
+// HackerRank - Easy
+// Between Two Sets
+// July 16, 2018
+// Language: Swift 4
+// 
+/* Description:
+    You will be given two arrays of integers. You will be asked to determine all integers that satisfy the following two conditions:
+    
+    1. The elements of the first array are all factors of the integer being considered
+    2. The integer being considered is a factor of all elements of the second array
+    
+    These numbers are referred to as being between the two arrays. You must determine how many such numbers exist.
+*/
+
+import UIKit
+
+let a = [3, 9, 6]
+let b = [36, 72]
+
+
+/*
+ * Complete the getTotalX function below.
+ */
+func getTotalX(a: [Int], b: [Int]) -> Int {
+    
+    // Keep track of how many factor is satisfied
+    var candidate = [Int]()
+    // Check from 1 to b[0]
+    for candNum in 1...b[0] {
+        // Check if elements in a works
+        for elementA in a {
+            if candNum % elementA == 0 {
+                if !candidate.contains(candNum) {
+                    candidate.append(candNum)
+                }
+            }
+            else {
+                if candidate.contains(candNum) {
+                    let index = candidate.index(of: candNum)
+                    candidate.remove(at: index!)
+                }
+                break
+            }
+        }
+    }
+    for elementsInCandidate in candidate {
+        // Check if elements in b work
+        // elementB = 36, 72
+        for elementB in b {
+            if elementB % elementsInCandidate != 0 {
+                if candidate.contains(elementsInCandidate) {
+                    let index = candidate.index(of: elementsInCandidate)
+                    candidate.remove(at: index!)
+                }
+                continue
+            }
+        }
+    }
+    return candidate.count
+}
+
+print(getTotalX(a: a, b: b))
