@@ -1,0 +1,67 @@
+// Aki Saito
+// HackerRank - Easy
+// Birthday Chocolate
+// July 17, 2018
+// Language: Swift 4
+// 
+/* Description:
+    Lily has a chocolate bar that she wants to share it with Ron for his birthday. Each of the squares has an integer on it. She decides to share a contiguous segment of the bar selected such that the length of the segment matches Ron's birth month and the sum of the integers on the squares is equal to his birth day. You must determine how many ways she can divide the chocolate.
+    
+    Consider the chocolate bar as an array of squares, s = [2, 2, 1, 3, 2]. She wants to find segments summing to Ron's birth day, d = 4 with a length equalling his birth month, m = 2. In this case, there are two segments meeting her criteria: [2, 2] and [1, 3].
+*/
+
+
+import UIKit
+
+let s = [2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1]
+let d = 18
+let m = 7
+
+//let s = [1, 2, 1, 3, 2]
+//let d = 3
+//let m = 2
+
+// Complete the solve function below.
+func solve(s: [Int], d: Int, m: Int) -> Int {
+   
+    // d = number we want
+    // m = how many numbers/choco-squares we can use
+    
+    // Helper variables
+    var counter: Int = 0
+    var sum: Int = 0
+    
+    var sumArray = [Int]()
+    
+    var currentIndex: Int = -1
+    
+    if s.count == 1 {
+        if s[0] == d {
+            return 1
+        }
+    } else {
+        // Start with first chocolate
+        for numbers in s {
+            sum += numbers
+            sumArray.append(numbers)
+            currentIndex += 1
+            if currentIndex + m-1 >= s.count {
+                break
+            } else {
+                for y in 1...m-1 {
+                    sumArray.append(s[currentIndex + y])
+                    sum += s[currentIndex + y]
+                }
+                sumArray.removeAll()
+            }
+            // Check sum
+            if sum == d {
+                counter += 1
+            }
+            sum = 0
+        }
+    }
+    return counter
+}
+
+print(solve(s: s, d: d, m: m))
