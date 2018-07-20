@@ -1,7 +1,7 @@
 // Aki Saito
 // HackerRank - Easy
 // Counting Valley
-// July 18, 2018
+// July 19, 2018
 // Language: C++
 // 
 /* Description:
