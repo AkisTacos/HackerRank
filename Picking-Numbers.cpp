@@ -1,7 +1,7 @@
 // Aki Saito
 // HackerRank - Easy
 // Picking Numbers
-// July 20, 2018
+// July 21, 2018
 // Language: C++
 // 
 /* Description:
