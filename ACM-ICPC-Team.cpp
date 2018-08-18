@@ -27,10 +27,7 @@ vector<int> acmTeam(vector<string> topic) {
     unsigned int size = topic.size();
     unsigned int numberOfTopics = topic[0].length();
     unsigned int max = 0, topicKnown = 0, candidateResult = 0;
-    unsigned int position = 1;
-    // size = 4
-    // number of topics = 5
-    
+
     for(unsigned int currentPosVec = 0; currentPosVec < size; currentPosVec++){
         for(unsigned int nextPosVec = 1; nextPosVec < size; nextPosVec++){
             if(currentPosVec == nextPosVec || currentPosVec > nextPosVec)
