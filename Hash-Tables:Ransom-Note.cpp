@@ -5,8 +5,8 @@
 // Language: C++
 // 
 /* Description:
-	Given N 2D points, we need to remove K points optimally such that remaining (N-K) points could be 
-  covered by using a rectangular cloth with minimum area covered.
+	Given the words in the magazine and the words in the ransom note, print Yes if he can replicate his
+	ransom note exactly using whole words from the magazine; otherwise, print No.
 */
 
 #include <bits/stdc++.h>
