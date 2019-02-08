@@ -5,7 +5,8 @@
 // Language: C++
 // 
 /* Description:
-	Find the minimum cost of copying string s.
+	Given two strings, determine if they share a common substring. 
+	A substring may be as small as one character.
 */
 
 #include <bits/stdc++.h>
