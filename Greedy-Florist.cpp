@@ -27,25 +27,44 @@
 
 using namespace std;
 
-int main(){
-	int numFlower;
-	cin >> numFlower;
-	int numPeople;
-	cin >> numPeople;
-
-	// Grab the prices for flowers
-	int i;
-	int priceArray[numFlower];
-	for(i = 0; i < numFlower; i++){
-		cin >> priceArray[i];
-	}
-
-	// Reverse in descending order
-	reverse(priceArray);
-
-	return 0;
-}
-
 int formula(int numberOfPrevious, int cost){
-	return = (1 + numberOfPrevious) * cost;
+    return (1 + numberOfPrevious) * cost;
 }
+
+int main(){
+    int numFlower;
+    cin >> numFlower;
+    int numPeople;
+    cin >> numPeople;
+
+    // Grab the prices for flowers
+    int i, temp;
+    vector<int> prices;
+
+    for(i = 0; i < numFlower; i++){
+        cin >> temp;
+        prices.push_back(temp);
+    }
+    
+    // Reverse in descending order
+    // if not sorted sort
+    sort(prices.begin(), prices.end());
+    reverse(prices.begin(), prices.end());
+    
+  
+    // Calculate result
+    int result = 0;
+    int numOfPrev = 0;
+    // Calculate the most expensive ones as many as we can first
+    // to prevent excessive payment then the next ones and so on...
+    // make sure to keep the number of flowers each person has is near or balanced
+    for(i = 0; i < numFlower; i++){
+        if(i % numPeople == 0 && i != 0)
+            numOfPrev++;
+        result += formula(numOfPrev, prices.at(i));
+    }
+    cout << result;
+
+    return 0;
+}
+
