@@ -1,6 +1,6 @@
 // Aki Saito
 // HackerRank - Easy
-// For Loop
+// Arrays Introduction
 // April 1, 2019
 // Language: C++
 // 
