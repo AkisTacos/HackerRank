@@ -1,7 +1,7 @@
 // Aki Saito
 // HackerRank - Easy
 // Variable Sized Arrays
-// April 1, 2019
+// April 2, 2019
 // Language: C++
 // 
 /* Description:
@@ -14,7 +14,7 @@
   a[i]. For each query, find and print the value of element j in the array
   at location a[i] on a new line.
 */
-  
+
 #include <cmath>
 #include <cstdio>
 #include <vector>
