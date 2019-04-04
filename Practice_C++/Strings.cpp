@@ -37,9 +37,20 @@ using namespace std;
 
 int main() {
 	// Complete the program
-    int a, b;
-    
-    
+    string strA, strB;
+
+    getline(cin, strA);
+    getline(cin, strB);
+
+    // 1st line length of strings
+    cout << strA.length() << " " << strB.length() << endl;
+    // 2nd line concatinate those two strings
+    cout << strA << strB << endl;
+    // 3rd swap first letters from the strings
+    char a = strA.at(0), b = strB.at(0);
+    strA.at(0) = b;
+    strB.at(0) = a;
+    cout << strA << " " << strB << endl;
 
     return 0;
 }
