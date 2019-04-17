@@ -1,6 +1,6 @@
 // Aki Saito
 // HackerRank - Easy
-// Lower Bound-STL
+// Inheritance Introduction
 // April 16, 2019
 // Language: C++
 // 
