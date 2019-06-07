@@ -14,29 +14,61 @@ Example:
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-int main() {
-  string testCase;
-  getline(cin, testCase);
-
-  cout << "Testing string: " << testCase << "..." << endl;
-
-  bool complete = false;
+string program(string str)
+{
   unsigned int i = 1;
-  char checkChar = testCase.at(0);
 
-  while (i != testCase.length())
+  vector<char> vecStr;
+
+  // First occurence
+  size_t pos 
+
+  return str;
+}
+
+
+
+// Only for testing
+int main() {
+  // Tester Variables
+  string test1 = "abcdddf", test2 = "eegdhhhouweppp", test3 = "aabbccdddcba";
+  string answer1 = "abcf", answer2 = "eegdouwe", answer3 = "";
+  cout << endl;
+  // Testing 1
+  if((answer1 == program(test1)))
   {
-    if(checkChar != testCase.at(i)){
-      checkChar = testCase.at(i);
-      i++;
-      continue;
-    }
-    
-    i++;
+    cout << "Test 1: Success!\n"; 
+  } 
+  else 
+  {
+    cout << "Test 1: Fail!\n"; 
   }
 
+  // Testing 2
+  if((answer2 == program(test2)))
+  {
+    cout << "Test 2: Success!\n";
+  }
+  else 
+  {
+    cout << "Test 2: Fail!\n"; 
+  }
+  
+  // Testing 3
+  if((answer3 == program(test3)))
+  {
+    cout << "Test 3: Success!\n";
+  }
+  else 
+  {
+    cout << "Test 3: Fail!\n"; 
+  }
+
+  cout << "\nCheck complete!" << endl;
   return 0;    
 }
+
