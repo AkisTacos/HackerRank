@@ -1,3 +1,10 @@
+/* Aki Saito
+* Leetcode - Easy
+* Longest Common Prefix
+* June 12, 2019
+* Language: C++
+*/ 
+
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
