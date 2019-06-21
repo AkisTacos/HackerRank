@@ -7,6 +7,14 @@
 
 class Solution {
 public:
+    
+    /*
+    *   Find the longest common prefix
+    *
+    *	@param string
+    *	@return string
+    */
+    
     string longestCommonPrefix(vector<string>& strs) {
         string result = "";
         
