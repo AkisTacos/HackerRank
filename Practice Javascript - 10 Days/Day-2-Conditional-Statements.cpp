@@ -1,3 +1,11 @@
+/*
+* Aki Saito
+* HackerRank - Easy
+* Javascript - Day 2: Conditional Statements
+* July 08, 2019
+* Language: Javascript
+*/
+
 'use strict';
 
 process.stdin.resume();
@@ -21,13 +29,6 @@ process.stdin.on('end', _ => {
 function readLine() {
     return inputString[currentLine++];
 }
-/*
-* Aki Saito
-* HackerRank - Easy
-* Javascript - Day 2: Conditional Statements
-* July 08, 2019
-* Language: Javascript
-*/
 
 /*
     *   Find and return grade
