@@ -30,6 +30,12 @@ function readLine() {
     return inputString[currentLine++];
 }
 
+/*
+*   Takes the first letter of string and returns the letter of corresponding lisit
+*   @param {String} s - Our given string
+*   @return {Char} - The character that corresponds to the list
+*/
+
 function getLetter(s) {
     let letter;
 

@@ -36,6 +36,13 @@ function readLine() {
     *      @param int
     *      @return char
 */
+
+/*
+*   Returns the appropriate letter grade
+*   @param {Number} score - A Number score for grade
+*   @return {Character} grade - A letter grade for score
+*/
+
 function getGrade(score) {
     let grade;
 

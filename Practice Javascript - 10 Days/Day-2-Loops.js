@@ -31,9 +31,10 @@ function readLine() {
 }
 
 /*
- * Complete the vowelsAndConsonants function.
- * Print your output using 'console.log()'.
- */
+*   Prints out all the vowels in string s, and consonants after
+*   @param {string} s - Our given string
+*   @return - Nothing is returned only console output
+*/
 function vowelsAndConsonants(s) {
     // Loop so that we check every letter in s
     var letter, i;
