@@ -42,7 +42,16 @@ function readLine() {
 function getDayName(dateString) {
     let dayName = new Date(dateString);
     let weekdayStr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    dayName = weekdayStr[dateNum.getDay()];
-    return dayName;
+    return weekdayStr[dayName.getDay()];
 }
 
+
+function main() {
+    const d = +(readLine());
+    
+    for (let i = 0; i < d; i++) {
+        const date = readLine();
+        
+        console.log(getDayName(date));
+    }
+}
