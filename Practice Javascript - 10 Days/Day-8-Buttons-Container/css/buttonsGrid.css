@@ -1,0 +1,12 @@
+// CSS file for Day-8-Buttons-Container project
+// 8-21-2019
+
+.btnContainer {
+    width: 75%;
+}
+
+.btnContainer > .btnStyle {
+    width: 30%;
+    height: 48px;
+    font-size: 24px;
+}
