@@ -1,3 +1,10 @@
+/*
+* Aki Saito
+* HackerRank - Easy
+* Javascript - Day 7: Regular Expressions II
+* August 21, 2019
+* Language: Javascript
+*/
 'use strict';
 
 process.stdin.resume();
