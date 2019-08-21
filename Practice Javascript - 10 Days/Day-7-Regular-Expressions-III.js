@@ -1,0 +1,60 @@
+/*
+* Aki Saito
+* HackerRank - Easy
+* Javascript - Day 7: Regular Expressions III
+* August 21, 2019
+* Language: Javascript
+*/
+
+'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', inputStdin => {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', _ => {
+    inputString = inputString.trim().split('\n').map(string => {
+        return string.trim();
+    });
+    
+    main();    
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+function regexVar() {
+    /*
+     * Declare a RegExp object variable named 're'
+     * It must match ALL occurrences of numbers in a string.
+     */
+
+    // \d will find single digit characters
+    // + will find the preceeding item which was \d 1 or more times
+    // g will be our flag for global matches 
+    let re = new RegExp('\\d+', 'g')
+    
+    /*
+     * Do not remove the return statement
+     */
+    return re;
+}
+
+
+function main() {
+    const re = regexVar();
+    const s = readLine();
+    
+    const r = s.match(re);
+    
+    for (const e of r) {
+        console.log(e);
+    }
+}
